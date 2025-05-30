@@ -1,0 +1,12 @@
+{
+    "page_title": "Attendance Login ",
+    "subtitle": "Please log in below ",
+    "logo_url": "",
+    "form_name_label": "Full Name",
+    "enable_question_1": true,
+    "question_1_label": "Student ID",
+    "enable_question_2": false,
+    "question_2_label": "Department",
+    "submit_button_label": "Log In",
+    "form_enabled": true
+}
