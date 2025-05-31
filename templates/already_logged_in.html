@@ -19,6 +19,19 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        .btn-custom {
+            background-color:rgb(197, 10, 3); /* Bootstrap secondary color */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #5a6268;
+        }
     </style>
 </head>
 <body>
@@ -29,8 +42,9 @@
         <h2 class="text-danger">🚫 Already Logged In</h2>
         <p>You are already logged in for today.</p>
         <p>Please try again tomorrow</p>
-        <!-- Clear the duplicate flag when returning -->
-        <a href="{{ url_for('index') }}?clear=true">Back to login page</a>
+
+        <!-- Styled Back to Login Button -->
+        <a href="{{ url_for('index') }}?clear=true" class="btn-custom">Back to Login Page</a>
     </div>
 </div>
 </body>
