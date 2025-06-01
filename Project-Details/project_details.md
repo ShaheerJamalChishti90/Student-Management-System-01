@@ -28,4 +28,4 @@ attendance_app/     #Folder
 
 # Login Page Access URL
 
-<img src="/Project-Details/QR-EMAUS STUDENT ATTENDANCE SYSTEM-65d1338a.png" width="150px" height="150px"></img>
+<img src="/Project-Details/Login Scan.png" width="150px" height="150px"></img>
