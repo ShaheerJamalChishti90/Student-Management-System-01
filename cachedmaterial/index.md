@@ -1,2 +1,0 @@
-- <a href="/" class="btn btn-primary mt-3">Back to Home</a> <- success.html
-- <a href="/" class="btn btn-primary mt-3">Back to Home</a> <- already logged in>
