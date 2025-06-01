@@ -4,6 +4,7 @@
 attendance_app/     #Folder
 │
 ├── app.py                  ← Main Flask File
+├── Procfile                  ← File to run the flask app live
 ├── requirements.txt        ← Contains the requirmenets/Packages and Libraries
 ├── settings.json           ← Will be auto-created
 ├── static/         #Folder
@@ -16,11 +17,15 @@ attendance_app/     #Folder
     ├── already_logged_in.html
     ├── admin_settings.html
     ├── admin_logs.html
-    └── error.html
 ```
 ---
 # Project Pages Links
 
- 1. **Login Page Link: ```<a href="{{ url_for('index') }}"</a>```**
- 2. **Admin Logs Page Link: ```<a href="/admin/logs">Admin Logs</a>```**
- 3. **Admin Settings Page Link: ```<a href="admin/settings">Admin Settings</a>```**
+ 1. **Login Page Link: ```https://msjc09.pythonanywhere.com/```**
+ 2. **Admin Logs Page Link: ```https://msjc09.pythonanywhere.com/admin/logs```**
+ 3. **Admin Settings Page Link: ```https://msjc09.pythonanywhere.com/admin/settings```**
+<hr>
+
+# Login Page Access URL
+
+<img src="/Project-Details/QR-EMAUS STUDENT ATTENDANCE SYSTEM-65d1338a.png" width="150px" height="150px"></img>
