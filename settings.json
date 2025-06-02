@@ -1,12 +1,12 @@
 {
-    "page_title": "Attendance Login ",
-    "subtitle": "Please log in below ",
+    "page_title": "Attendance Registration",
+    "subtitle": "Please enter your details below",
     "logo_url": "",
-    "form_name_label": "Full Name",
+    "form_name_label": "Shaheer",
     "enable_question_1": true,
-    "question_1_label": "Student ID",
-    "enable_question_2": false,
-    "question_2_label": "Department",
-    "submit_button_label": "Log In",
+    "question_1_label": "Phone Number bata",
+    "enable_question_2": true,
+    "question_2_label": "Baap Ka naam",
+    "submit_button_label": "Register",
     "form_enabled": true
 }

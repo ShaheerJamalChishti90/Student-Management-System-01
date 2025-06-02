@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Settings</title>
+    <title>{% if lang == 'es' %}Editar Configuración{% else %}Admin Settings{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"  rel="stylesheet">
     <style>
@@ -24,19 +24,36 @@
 <body>
 
 <div class="container mt-4">
+
+    <!-- Language Switch Buttons -->
+    <div class="text-end mb-3">
+        <a href="?lang=en" class="btn btn-outline-primary btn-sm">🇺🇸 English</a>
+        <a href="?lang=es" class="btn btn-outline-primary btn-sm">🇪🇸 Español</a>
+    </div>
+
     <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
 
     <div class="card p-4">
-        <h3 class="mb-4 text-center">Edit Attendance Settings</h3>
+        <h3 class="mb-4 text-center">
+            {% if lang == 'es' %}
+                Editar parámetros de asistencia
+            {% else %}
+                Edit Attendance Settings
+            {% endif %}
+        </h3>
 
         <form method="POST">
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">Page Title</label>
+                    <label class="form-label">
+                        {% if lang == 'es' %}Título{% else %}Page Title{% endif %}
+                    </label>
                     <input type="text" name="page_title" class="form-control" value="{{ settings.page_title }}">
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">Subtitle</label>
+                    <label class="form-label">
+                        {% if lang == 'es' %}Subtitulo{% else %}Subtitle{% endif %}
+                    </label>
                     <input type="text" name="subtitle" class="form-control" value="{{ settings.subtitle }}">
                 </div>
             </div>
@@ -47,46 +64,77 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Name Field Label</label>
+                <label class="form-label">
+                    {% if lang == 'es' %}Nombre{% else %}First Name{% endif %}
+                </label>
                 <input type="text" name="form_name_label" class="form-control" value="{{ settings.form_name_label }}">
             </div>
 
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="enable_question_1" {% if settings.enable_question_1 %}checked{% endif %}>
-                <label class="form-check-label">Enable Question 1</label>
-            </div>
-
             <div class="mb-3">
-                <input type="text" name="question_1_label" class="form-control" value="{{ settings.question_1_label }}">
-            </div>
-
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="enable_question_2" {% if settings.enable_question_2 %}checked{% endif %}>
-                <label class="form-check-label">Enable Question 2</label>
-            </div>
-
-            <div class="mb-3">
-                <input type="text" name="question_2_label" class="form-control" value="{{ settings.question_2_label }}">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Submit Button Text</label>
-                <input type="text" name="submit_button_label" class="form-control" value="{{ settings.submit_button_label }}">
+                <label class="form-label">
+                    {% if lang == 'es' %}Apellido{% else %}Last Name{% endif %}
+                </label>
+                <input type="text" name="last_name_label" class="form-control"
+                    placeholder="{% if lang == 'es' %}Ejemplo: Pérez{% else %}Example: Smith{% endif %}"
+                    value="{{ settings.last_name_label if settings.last_name_label else ('Apellido' if lang == 'es' else 'Last Name') }}">
             </div>
 
             <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="form_enabled" {% if settings.form_enabled %}checked{% endif %}>
-                <label class="form-check-label">Enable Attendance Form</label>
+                <input class="form-check-input" type="checkbox" name="enable_question_1"
+                       {% if settings.enable_question_1 %}checked{% endif %}>
+                <label class="form-check-label">
+                    {% if lang == 'es' %}Activar pregunta 1{% else %}Enable Question 1{% endif %}
+                </label>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Save Settings</button>
+            <div class="mb-3">
+                <input type="text" name="question_1_label" class="form-control"
+                       placeholder="{% if lang == 'es' %}Ingese detalle de pregunta 1{% else %}Enter question 1 label{% endif %}"
+                       value="{{ settings.question_1_label }}">
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="enable_question_2"
+                       {% if settings.enable_question_2 %}checked{% endif %}>
+                <label class="form-check-label">
+                    {% if lang == 'es' %}Activar pregunta 2{% else %}Enable Question 2{% endif %}
+                </label>
+            </div>
+
+            <div class="mb-3">
+                <input type="text" name="question_2_label" class="form-control"
+                       placeholder="{% if lang == 'es' %}Ingese detalle de pregunta 2{% else %}Enter question 2 label{% endif %}"
+                       value="{{ settings.question_2_label }}">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    {% if lang == 'es' %}Boton de acción{% else %}Submit Button Text{% endif %}
+                </label>
+                <input type="text" name="submit_button_label" class="form-control"
+                       value="{{ settings.submit_button_label }}">
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="form_enabled"
+                       {% if settings.form_enabled %}checked{% endif %}>
+                <label class="form-check-label">
+                    {% if lang == 'es' %}Activar ficha de registro{% else %}Enable Attendance Form{% endif %}
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                {% if lang == 'es' %}Guardar parametros{% else %}Save Settings{% endif %}
+            </button>
         </form>
 
         <hr class="my-4">
-        <a href="/admin/logs" class="btn btn-secondary w-100">Back to Admin Logs</a>
+        <a href="/admin/logs?lang={{ lang }}" class="btn btn-secondary w-100">
+            {% if lang == 'es' %}Regresar a Login{% else %}Back to Admin Logs{% endif %}
+        </a>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
 </body>
 </html>
