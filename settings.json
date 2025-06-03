@@ -2,11 +2,11 @@
     "page_title": "Attendance Registration",
     "subtitle": "Please enter your details below",
     "logo_url": "",
-    "form_name_label": "Shaheer",
+    "form_name_label": "First Name",
     "enable_question_1": true,
-    "question_1_label": "Phone Number bata",
+    "question_1_label": "Phone",
     "enable_question_2": true,
-    "question_2_label": "Baap Ka naam",
+    "question_2_label": "Question 2",
     "submit_button_label": "Register",
     "form_enabled": true
 }
